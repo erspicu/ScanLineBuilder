@@ -1,0 +1,9 @@
+C:\Users\abraxas\Dropbox\nes_dev\ScanLineBuilder\ScanLineBuilder\bin\Debug\ScanLineBuilder.exe.config
+C:\Users\abraxas\Dropbox\nes_dev\ScanLineBuilder\ScanLineBuilder\bin\Debug\ScanLineBuilder.exe
+C:\Users\abraxas\Dropbox\nes_dev\ScanLineBuilder\ScanLineBuilder\bin\Debug\ScanLineBuilder.pdb
+C:\Users\abraxas\Dropbox\nes_dev\ScanLineBuilder\ScanLineBuilder\obj\Debug\ScanLineBuilder.csprojResolveAssemblyReference.cache
+C:\Users\abraxas\Dropbox\nes_dev\ScanLineBuilder\ScanLineBuilder\obj\Debug\ScanLineBuilder.Properties.Resources.resources
+C:\Users\abraxas\Dropbox\nes_dev\ScanLineBuilder\ScanLineBuilder\obj\Debug\ScanLineBuilder.csproj.GenerateResource.Cache
+C:\Users\abraxas\Dropbox\nes_dev\ScanLineBuilder\ScanLineBuilder\obj\Debug\ScanLineBuilder.exe
+C:\Users\abraxas\Dropbox\nes_dev\ScanLineBuilder\ScanLineBuilder\obj\Debug\ScanLineBuilder.pdb
+C:\Users\abraxas\Dropbox\nes_dev\ScanLineBuilder\ScanLineBuilder\obj\Debug\ScanLineBuilder.Form1.resources
