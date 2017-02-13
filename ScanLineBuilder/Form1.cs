@@ -146,13 +146,19 @@ namespace ScanLineBuilder
 
         }
 
+        bool running = false;
         private void button3_Click(object sender, EventArgs e)
         {
 
-
+            
+            if (running)
+            {
+                MessageBox.Show("running..");
+                return;
+            }
             new Thread(() =>
             {
-
+                running = true;
                 Stopwatch ST = new Stopwatch();
                 ST.Restart();
 
@@ -286,6 +292,8 @@ namespace ScanLineBuilder
                 NativeGDI.initHighSpeed(panel1.CreateGraphics(), 1196, 960, result3, 0, 0);
                 NativeGDI.DrawImageHighSpeedtoDevice();
 
+                running = false;
+
             }).Start();
 
 
@@ -294,15 +302,21 @@ namespace ScanLineBuilder
 
         private void button7_Click(object sender, EventArgs e)
         {
+            if ( running)
+            {
+                MessageBox.Show("running");
+                return;
+            }
 
-            uint* input = (uint*)Marshal.AllocHGlobal(sizeof(uint) * 768 * 720);
-            Bitmap bg = new Bitmap(Application.StartupPath + "/sample3x.png");
+            running = true;
+            uint* input = (uint*)Marshal.AllocHGlobal(sizeof(uint) * 512 * 480);
+            Bitmap bg = new Bitmap(Application.StartupPath + "/sample.png");
             BitmapData srcData = bg.LockBits(new Rectangle(Point.Empty, bg.Size), ImageLockMode.ReadOnly, PixelFormat.Format32bppArgb);
-            for (int y = 0; y < 720; y++)
-                for (int x = 0; x < 768; x++)
-                    input[x + y *768] = ((uint*)srcData.Scan0.ToPointer())[x + y * 768];
+            for (int y = 0; y < 480; y++)
+                for (int x = 0; x < 512; x++)
+                    input[x + y *512] = ((uint*)srcData.Scan0.ToPointer())[x + y * 512];
             bg.UnlockBits(srcData);
-            uint* output = (uint*)Marshal.AllocHGlobal(sizeof(uint) * 1792 * 1440);
+            uint* output = (uint*)Marshal.AllocHGlobal(sizeof(uint) * 1196 * 960);
 
             LibScanline.init(input, output);
 
@@ -313,14 +327,16 @@ namespace ScanLineBuilder
                 Stopwatch ST = new Stopwatch();
 
                 ST.Restart();
-                for (int i = 0; i < 400; i++) LibScanline.ScanlineFor3x();
+                for (int i = 0; i < 400; i++) LibScanline.ScanlineFor2x();
                 ST.Stop();
 
                 Console.WriteLine(ST.ElapsedMilliseconds);
                 Console.WriteLine(ST.ElapsedMilliseconds / 400f);
 
-                NativeGDI.initHighSpeed(panel1.CreateGraphics(), 1792, 1440, output, 0, 0);
+                NativeGDI.initHighSpeed(panel1.CreateGraphics(), 1196, 960, output, 0, 0);
                 NativeGDI.DrawImageHighSpeedtoDevice();
+
+                running = false;
   
             }).Start();
         }
