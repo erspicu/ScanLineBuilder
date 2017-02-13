@@ -57,6 +57,7 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="LibScanline.cs" />
     <Compile Include="NativeAPIShare.cs" />
     <Compile Include="NativeRendering.cs" />
     <Compile Include="Program.cs" />
