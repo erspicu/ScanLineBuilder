@@ -206,7 +206,7 @@ namespace ScanLineBuilder
                         float I = yiq[((x & 0xffc) + y * 1196) * 3 + 1];
                         float Q = yiq[((x & 0xffc) + y * 1196) * 3 + 2];
 
-                        Y += 0.05F;
+                        Y += 0.05F;//加點亮度
 
                         float R_f = Y + I * 0.956f + Q * 0.621f;
                         float G_f = Y + I * (-0.272f) + Q * (-0.647f);

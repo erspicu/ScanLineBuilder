@@ -163,6 +163,7 @@ namespace ScanLineBuilder
         //for 512x480 source to 1196 * 960
         public static void ScanlineFor2x()
         {
+            //for test
             //const float p = 1f / 1196.0f * 512.0f;
             Parallel.For(0, 960, y =>
             {
